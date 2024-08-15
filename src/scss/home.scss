@@ -1,6 +1,151 @@
 //====================================================================================================
-.page{
-   color:black;
-   text-align:center;
+.off{
+   opacity: 0;
+   transform: translateY(20px);
+   transition: opacity 3s ease, transform 3s ease;
 }
+.page {
+   color:black;
+   text-align: center;
+   font-size: 4vh;
+   line-height: 130%;
+   
+   //animation: screensaver 5s ease forwards;
+   &__container {
+      padding:0 rem(200);
+   }
+
+   // .page__title
+
+   &__title {
+      padding: rem(100) 0;
+   }
+
+   // .page__date
+
+   &__date {
+      line-height: 150%;
+      //letter-spacing: 1rem;
+   }
+
+   // .page__congratulation
+
+   &__congratulation {
+      position:relative;
+      padding: rem(80) 0 ;
+      display:inline-block;
+   }
+   &__congratulation::after{
+      content: " ";
+      bottom:10%;
+      right: 16%;
+      width: 400px;
+      height: 1px;
+      position:absolute;
+      background-color: black;
+   }
+   // .page__WH
+
+   &__WH {
+      padding: rem(80) 0 rem(40) 0;
+   }
+
+   // .page__place
+
+   &__place {
+      padding: 0 0 rem(60) 0;
+   }
+
+   // .page__guests
+
+   &__guests {
+      padding: 0 0 rem(80) 0;
+   }
+
+   // .page__DC
+
+   &__DC {
+      padding:rem(40) 0;
+   }
+
+   // .page__clother
+
+   &__clother {
+   }
+}
+.on{
+   opacity: 1;
+   transform: translateY(0);
+}
+.data {
+
+   // .data__number
+
+   &__number {
+      font-size: 7vh;
+      padding: 0 rem(10);
+   }
+   &__year{
+      font-size: 7vh;
+      padding: 0 rem(10);
+   }
+}
+.slider {
+      margin: 0;
+      //background-color: grey;
+      //display:flex;
+      //flex-direction: column;
+   }
+.slide-main-block {
+}
+.image{
+   display: inline-block;
+   //margin: 0 2%;
+   //text-align: center;
+   object-fit: cover;
+   width: 100%;
+   height: rem(740);
+   //position:absolute;
+   // z-index: -1;
+}
+.last-message {
+   margin-top:rem(-48);
+   color: black;
+   text-align: center;
+   height: rem(550);
+   background-image: url("../img/decor/break.png");
+   font-size: rem(40);
+   line-height: 130%;
+   letter-spacing: rem(5);
+   // .last-message__image
+
+   // &__image img{
+   //    position: absolute;
+   //    object-fit: cover;
+   //    width:100%;
+   //    height: rem(500);
+   // }
+
+   // .last-message__first-title
+
+   &__first-title {
+      margin: rem(80) auto;
+   }
+
+   // .last-message__second-title
+
+   &__second-title {
+      
+   }
+}
+.last-messsage {
+
+   // .last-messsage__content
+
+   &__content {
+      
+   }
+}
+
+
 //====================================================================================================

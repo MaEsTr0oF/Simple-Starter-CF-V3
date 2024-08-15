@@ -30,10 +30,10 @@
    //display: inline-flex;
    width: 320px;
    margin: 0px auto;
-   top:500px;
+   top:60vh;
    //font-size: 90px;
    text-align: center;
-   line-height: 130%;
+   line-height: 120%;
    animation: screensaver 5s ease forwards;
    @include adaptiveValue("font-size",90 ,60 );
    &_first {
@@ -74,14 +74,14 @@
 @keyframes screensaver {
    from {
       line-height: 100%;
-      font-size: 70px;
-      letter-spacing: 100%;
+      font-size: 7vh;
+      letter-spacing: 90%;
       opacity: 0;
    }
    to {
-      line-height: 130%;
-      font-size: 90px;
-      letter-spacing: 130%;
+      line-height: 120%;
+      font-size: 10vh;
+      letter-spacing: 0.5rem;
       opacity: 1;
    }
 }
