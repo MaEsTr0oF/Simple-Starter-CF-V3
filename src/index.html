@@ -63,6 +63,28 @@
               <div class="last-message__second-title">ПРОСИМ ПОДТВЕРДИТЬ ВАШЕ<br> ПРИСУТСТВИЕ ДО <span>01.04.2024</span></div>
             </div>
           </div>
+          <div class="survey">
+            <div class="survey__title">
+              <label for="formNameSurename" class="survey__title_nameSurename">Имя и Фамилия (Если будете с парой,<br> укажите несколько имен) <br></label>
+              <input id="formNameSurename" type="text" placeholder="Имя и Фамилия"  class="survey__title_input">
+            </div>
+            <div class="survey__choose">Ваше присутствие:</div>
+            <div class="survey__options">
+              <div class="options__item">
+                <input type="radio" checked id="formFirstAnswer" value="Yes" name="choosen" class="options__input">
+                <label for="formFirstAnswer" class="options__label"><span>Я с удовольствием приду</span></label>
+              </div>
+              <div class="options__item">
+                <input type="radio"  id="formSecondAnswer" value="No" name="choosen" class="options__input">
+                <label for="formSecondAnswer" class="options__label"><span>К сожалению, не смогу присутствовать</span></label>
+              </div>
+              <div class="options__item">
+                <input type="radio"  id="formThirdAnswer" value="double" name="choosen" class="options__input">
+                <label for="formThirdAnswer" class="options__label"><span>Буду со своей парой</span></label>
+              </div>
+            </div>
+            
+          </div>
         @@include('html/_footer.htm',{})
     </div>
     @@include('html/_popup.htm',{})

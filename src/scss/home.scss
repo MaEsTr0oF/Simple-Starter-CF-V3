@@ -7,7 +7,7 @@
 .page {
    color:black;
    text-align: center;
-   font-size: 4vh;
+   font-size: calc(14px + 18 * (100vw / 1440));
    line-height: 130%;
    
    //animation: screensaver 5s ease forwards;
@@ -104,16 +104,18 @@
    //text-align: center;
    object-fit: cover;
    width: 100%;
-   height: rem(740);
-   //position:absolute;
-   // z-index: -1;
+   
+   //height: rem(740);
+   height:calc(620px + 300 * (100vw / 1280));
 }
 .last-message {
    margin-top:rem(-48);
+   //margin-right: rem(-200);
    color: black;
    text-align: center;
    height: rem(550);
    background-image: url("../img/decor/break.png");
+   width: 100%;
    font-size: rem(40);
    line-height: 130%;
    letter-spacing: rem(5);
@@ -146,6 +148,111 @@
       
    }
 }
+.survey {
+   margin-top:rem(60);
+   color:black;
+   text-align: center;
+   font-size: calc(14px + 18 * (100vw / 1440));
+   line-height: 130%;
+   letter-spacing: 1px;
+   // .survey__title
 
+   &__title {
+
+      // .survey__title_nameSurename
+
+      &_nameSurename {
+         padding-bottom: rem(40);
+      }
+
+      // .survey__title_input
+
+      &_input {
+         display:inline-block;
+         padding: rem(60);
+         font-size: calc(14px + 18 * (100vw / 1440));
+         width:60%;
+         text-align: center;
+         //background-color: transparent;
+         color:black;
+         
+      }
+     
+   }
+
+   // .survey__choose
+
+   &__choose {
+      display: inline-block;
+      position:relative;
+   }
+   &__choose::before{
+      content: " ";
+      position: absolute;
+      top:-80%;
+      left:-60%;
+      background-color: black;
+      width: 220%;
+      height: 2px;
+
+
+   }
+   // .survey__options
+
+   &__options {
+      margin:40px  0 0 250px;
+      text-align: start;
+   }
+}
+input:focus {outline: none;}
+.options {
+
+   // .options__item
+
+   &__item {
+   }
+
+   // .options__input
+
+   &__input {
+      display:none;
+   }
+
+   // .options__label
+
+   &__label {
+      padding:rem(20);
+      display: inline-flex;
+      line-height: 140%;
+      align-items:center;
+      position: relative;
+      font-size: calc(14px + 18 * (100vw / 1440));
+   }
+   &__label::before{
+      content: "";
+      flex:0 0 24px;
+      align-self: flex-start;
+      height: 24px;
+      background-color: grey;
+      border-radius: 50%;
+      margin:15px 20px 0 0;
+   }
+   &__label::after{
+      transition: all 0.5s ease 0s;
+      content: "";
+      position: absolute;
+      top:40px;
+      left:25px;
+      width: 14px;
+      height: 14px;
+      background-color: pink;
+      border-radius: 50%;
+      transform: scale(0);
+   }
+}
+.options__input:checked + .options__label::after{
+   transform: scale(1);
+
+}
 
 //====================================================================================================

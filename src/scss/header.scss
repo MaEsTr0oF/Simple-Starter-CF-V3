@@ -35,8 +35,10 @@
    text-align: center;
    line-height: 120%;
    animation: screensaver 5s ease forwards;
-   @include adaptiveValue("font-size",90 ,60 );
+   color:black;
+   //font-size: calc(80px + 16 * (100vw / 1280));
    &_first {
+      margin-left: -55px;
       //position: absolute;
 
    }
@@ -53,8 +55,8 @@
       position: absolute;
       top:50%;
       right:80px;
-      background-color: white;
-      width: 250%;
+      background-color: black;
+      width: 300%;
       height: 2px;
    }
    &_second::after{
@@ -62,25 +64,27 @@
       position: absolute;
       top:50%;
       left:80px;
-      background-color: white;
-      width: 250%;
+      background-color: black;
+      width: 300%;
       height: 2px;
    }
    // .title_three
 
    &_three {
+      margin-left: -40px;
    }
 }
 @keyframes screensaver {
    from {
       line-height: 100%;
-      font-size: 7vh;
+      font-size: calc(18px + 18 * (100vw / 1440));
       letter-spacing: 90%;
       opacity: 0;
    }
    to {
+      //transform: translate(-100px);
       line-height: 120%;
-      font-size: 10vh;
+      font-size: calc(60px + 16 * (100vw / 1280));
       letter-spacing: 0.5rem;
       opacity: 1;
    }
