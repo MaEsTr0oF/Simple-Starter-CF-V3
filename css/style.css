@@ -148,6 +148,11 @@ body {
   line-height: 120%;
   -webkit-animation: screensaver 5s ease forwards;
           animation: screensaver 5s ease forwards;
+  color: #000;
+}
+
+.title_first {
+  margin-left: -55px;
 }
 
 .title_second {
@@ -160,8 +165,8 @@ body {
   position: absolute;
   top: 50%;
   right: 80px;
-  background-color: #fff;
-  width: 250%;
+  background-color: #000;
+  width: 300%;
   height: 2px;
 }
 
@@ -170,22 +175,26 @@ body {
   position: absolute;
   top: 50%;
   left: 80px;
-  background-color: #fff;
-  width: 250%;
+  background-color: #000;
+  width: 300%;
   height: 2px;
+}
+
+.title_three {
+  margin-left: -40px;
 }
 
 @-webkit-keyframes screensaver {
   from {
     line-height: 100%;
-    font-size: 7vh;
+    font-size: calc(18px + 1.25vw);
     letter-spacing: 90%;
     opacity: 0;
   }
 
   to {
     line-height: 120%;
-    font-size: 10vh;
+    font-size: calc(60px + 1.25vw);
     letter-spacing: .5rem;
     opacity: 1;
   }
@@ -194,14 +203,14 @@ body {
 @keyframes screensaver {
   from {
     line-height: 100%;
-    font-size: 7vh;
+    font-size: calc(18px + 1.25vw);
     letter-spacing: 90%;
     opacity: 0;
   }
 
   to {
     line-height: 120%;
-    font-size: 10vh;
+    font-size: calc(60px + 1.25vw);
     letter-spacing: .5rem;
     opacity: 1;
   }
@@ -221,7 +230,7 @@ body {
 .page {
   color: #000;
   text-align: center;
-  font-size: 4vh;
+  font-size: calc(14px + 1.25vw);
   line-height: 130%;
 }
 
@@ -295,7 +304,7 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  height: 46.25rem;
+  height: calc(620px + 23.4375vw);
 }
 
 .no-webp .last-message{
@@ -306,6 +315,7 @@ body {
   color: #000;
   text-align: center;
   height: 34.375rem;
+  width: 100%;
   font-size: 2.5rem;
   line-height: 130%;
   letter-spacing: 0.3125rem;
@@ -315,30 +325,102 @@ body {
   margin: 5rem auto;
 }
 
-@media (min-width: 120em) {
-  .title {
-    font-size: 5.625rem;
-  }
+.survey {
+  margin-top: 3.75rem;
+  color: #000;
+  text-align: center;
+  font-size: calc(14px + 1.25vw);
+  line-height: 130%;
+  letter-spacing: 1px;
 }
 
-@media (max-width: 20em) {
-  .title {
-    font-size: 3.75rem;
-  }
+.survey__title_nameSurename {
+  padding-bottom: 2.5rem;
 }
 
-@media (min-width: 20em)and (max-width: 120em) {
-@supports (font-size: clamp( 3.75rem , 3.375rem  +  1.875vw , 5.625rem )) {
-    .title {
-      font-size: clamp( 3.75rem , 3.375rem  +  1.875vw , 5.625rem );
-    }
+.survey__title_input {
+  display: inline-block;
+  padding: 3.75rem;
+  font-size: calc(14px + 1.25vw);
+  width: 60%;
+  text-align: center;
+  color: #000;
 }
 
-@supports not (font-size: clamp( 3.75rem , 3.375rem  +  1.875vw , 5.625rem )) {
-    .title {
-      font-size: calc(3.75rem + 1.875*(100vw - 20rem)/100);
-    }
+.survey__choose {
+  display: inline-block;
+  position: relative;
 }
+
+.survey__choose::before {
+  content: " ";
+  position: absolute;
+  top: -80%;
+  left: -60%;
+  background-color: #000;
+  width: 220%;
+  height: 2px;
+}
+
+.survey__options {
+  margin: 40px 0 0 250px;
+  text-align: start;
+}
+
+input:focus {
+  outline: none;
+}
+
+.options__input {
+  display: none;
+}
+
+.options__label {
+  padding: 1.25rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 140%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  font-size: calc(14px + 1.25vw);
+}
+
+.options__label::before {
+  content: "";
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  height: 24px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 15px 20px 0 0;
+}
+
+.options__label::after {
+  -webkit-transition: all .5s ease 0s;
+  transition: all .5s ease 0s;
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 25px;
+  width: 14px;
+  height: 14px;
+  background-color: pink;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
+.options__input:checked+.options__label::after {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }
 
 .webp .last-message{ background-image: url(../img/decor/break.webp); }
