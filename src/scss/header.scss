@@ -30,7 +30,7 @@
    //display: inline-flex;
    width: 320px;
    margin: 0px auto;
-   top:60vh;
+   top:65vh;
    //font-size: 90px;
    text-align: center;
    line-height: 120%;
@@ -38,7 +38,7 @@
    color:black;
    //font-size: calc(80px + 16 * (100vw / 1280));
    &_first {
-      margin-left: -55px;
+      margin-left: calc(-25px - 40 * (100vw / 1440));
       //position: absolute;
 
    }
@@ -77,14 +77,14 @@
 @keyframes screensaver {
    from {
       line-height: 100%;
-      font-size: calc(18px + 18 * (100vw / 1440));
+      font-size: calc(30px + 30 * (100vw / 1440));
       letter-spacing: 90%;
       opacity: 0;
    }
    to {
       //transform: translate(-100px);
       line-height: 120%;
-      font-size: calc(60px + 16 * (100vw / 1280));
+      font-size: calc(36px + 32 * (100vw / 1280));
       letter-spacing: 0.5rem;
       opacity: 1;
    }

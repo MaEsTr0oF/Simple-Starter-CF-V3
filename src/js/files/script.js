@@ -56,3 +56,19 @@ var i = 1;
 },4000)
 
 
+const form=document.getElementById('form');
+function sendMessage(e){
+  e.preventDefault();
+  
+  let formData =new FormData(form);
+  let response =fetch('sendmail.php',{
+    method:'POST',
+    body:formData
+  });
+  if(response.ok){
+    //formPreview.innerHTML='';
+    //form.reset();
+  }else{
+    alert('Ошибка');
+  }
+}
