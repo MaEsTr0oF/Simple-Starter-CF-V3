@@ -143,7 +143,7 @@ body {
   position: relative;
   width: 320px;
   margin: 0px auto;
-  top: 60vh;
+  top: 65vh;
   text-align: center;
   line-height: 120%;
   -webkit-animation: screensaver 5s ease forwards;
@@ -152,7 +152,7 @@ body {
 }
 
 .title_first {
-  margin-left: -55px;
+  margin-left: calc(-25px - 2.7777777778vw);
 }
 
 .title_second {
@@ -187,14 +187,14 @@ body {
 @-webkit-keyframes screensaver {
   from {
     line-height: 100%;
-    font-size: calc(18px + 1.25vw);
+    font-size: calc(30px + 2.0833333333vw);
     letter-spacing: 90%;
     opacity: 0;
   }
 
   to {
     line-height: 120%;
-    font-size: calc(60px + 1.25vw);
+    font-size: calc(36px + 2.5vw);
     letter-spacing: .5rem;
     opacity: 1;
   }
@@ -203,14 +203,14 @@ body {
 @keyframes screensaver {
   from {
     line-height: 100%;
-    font-size: calc(18px + 1.25vw);
+    font-size: calc(30px + 2.0833333333vw);
     letter-spacing: 90%;
     opacity: 0;
   }
 
   to {
     line-height: 120%;
-    font-size: calc(60px + 1.25vw);
+    font-size: calc(36px + 2.5vw);
     letter-spacing: .5rem;
     opacity: 1;
   }
@@ -230,12 +230,8 @@ body {
 .page {
   color: #000;
   text-align: center;
-  font-size: calc(14px + 1.25vw);
+  font-size: calc(20px + 1.3888888889vw);
   line-height: 130%;
-}
-
-.page__container {
-  padding: 0 12.5rem;
 }
 
 .page__title {
@@ -255,8 +251,8 @@ body {
 .page__congratulation::after {
   content: " ";
   bottom: 10%;
-  right: 16%;
-  width: 400px;
+  right: -5%;
+  width: 110%;
   height: 1px;
   position: absolute;
   background-color: #000;
@@ -286,12 +282,12 @@ body {
 }
 
 .data__number {
-  font-size: 7vh;
+  font-size: calc(30px + 2.0833333333vw);
   padding: 0 0.625rem;
 }
 
 .data__year {
-  font-size: 7vh;
+  font-size: calc(30px + 2.0833333333vw);
   padding: 0 0.625rem;
 }
 
@@ -316,33 +312,34 @@ body {
   text-align: center;
   height: 34.375rem;
   width: 100%;
-  font-size: 2.5rem;
+  font-size: calc(20px + 1.3888888889vw);
   line-height: 130%;
   letter-spacing: 0.3125rem;
 }
 
 .last-message__first-title {
-  margin: 5rem auto;
+  margin: calc(40px + 1.3888888889vw) auto;
 }
 
 .survey {
   margin-top: 3.75rem;
   color: #000;
   text-align: center;
-  font-size: calc(14px + 1.25vw);
+  font-size: calc(20px + 1.3888888889vw);
   line-height: 130%;
   letter-spacing: 1px;
 }
 
 .survey__title_nameSurename {
-  padding-bottom: 2.5rem;
+  padding-bottom: calc(20px + 1.3888888889vw);
 }
 
 .survey__title_input {
   display: inline-block;
-  padding: 3.75rem;
-  font-size: calc(14px + 1.25vw);
-  width: 60%;
+  padding: calc(40px + 1.3888888889vw);
+  padding-left: calc(0px + 4.1666666667vw);
+  font-size: calc(14px + 1.3888888889vw);
+  width: calc(100% + 10.4166666667vw);
   text-align: center;
   color: #000;
 }
@@ -363,7 +360,7 @@ body {
 }
 
 .survey__options {
-  margin: 40px 0 0 250px;
+  margin: 40px 0 0 calc(0px + 17.3611111111vw);
   text-align: start;
 }
 
@@ -421,6 +418,45 @@ input:focus {
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
+}
+
+.form__button {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 60px;
+  background-color: #f1768a;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 20px;
+  margin: calc(30px + 1.3888888889vw) 0;
+  -webkit-box-shadow: 0 5px 0 #30171b;
+          box-shadow: 0 5px 0 #30171b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-transition: background-color .5s ease 0s;
+  transition: background-color .5s ease 0s;
+  position: relative;
+  top: 0;
+}
+
+.form__button:hover {
+  background-color: #9a4c59;
+}
+
+.form__button:active {
+  top: 3px;
+  -webkit-box-shadow: 0 2px 0 #30171b;
+          box-shadow: 0 2px 0 #30171b;
 }
 
 .webp .last-message{ background-image: url(../img/decor/break.webp); }

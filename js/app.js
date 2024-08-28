@@ -288,6 +288,7 @@
         i++;
         if (i == 5) i = 1;
     }), 4e3);
+    document.getElementById("form");
     window["FLS"] = true;
     isWebp();
     menuInit();
