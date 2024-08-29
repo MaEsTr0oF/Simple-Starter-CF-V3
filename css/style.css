@@ -248,16 +248,6 @@ body {
   display: inline-block;
 }
 
-.page__congratulation::after {
-  content: " ";
-  bottom: 10%;
-  right: -5%;
-  width: 110%;
-  height: 1px;
-  position: absolute;
-  background-color: #000;
-}
-
 .page__WH {
   padding: 5rem 0 2.5rem 0;
 }
