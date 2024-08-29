@@ -288,26 +288,6 @@
         i++;
         if (i == 5) i = 1;
     }), 4e3);
-    document.addEventListener("DOMContentLoaded", (function() {
-        const form = document.getElementById("form");
-        form.addEventListener("submit", (async function(e) {
-            e.preventDefault();
-            let formData = new FormData(form);
-            try {
-                let response = await fetch("sendmail.php", {
-                    method: "POST",
-                    body: formData
-                });
-                if (response.ok) {
-                    const result = await response.json();
-                    alert(result.message);
-                    form.reset();
-                } else alert("Ошибка при отправке данных");
-            } catch (error) {
-                alert("Ошибка при отправке: " + error.message);
-            }
-        }));
-    }));
     window["FLS"] = true;
     isWebp();
     menuInit();

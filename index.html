@@ -6,13 +6,24 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240829130259">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240829145826">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js?_v=20240829145826">
+	</script>
+	<script type="text/javascript">
+		(function() {
+			// https://dashboard.emailjs.com/admin/account
+			emailjs.init({
+				publicKey: "34WFOYOky5a1f6YGC",
+			});
+		})();
+	</script>
 </head>
 
 <body>
+
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__container">
@@ -77,7 +88,7 @@
 				<div class="last-message__second-title">ПРОСИМ ПОДТВЕРДИТЬ ВАШЕ<br> ПРИСУТСТВИЕ ДО <span>01.04.2024</span></div>
 			</div>
 		</div>
-		<form class="survey" id="form">
+		<form class="survey" id="contactForm">
 			<div class="survey__title">
 				<label for="formNameSurename" class="survey__title_nameSurename">
 					Имя и Фамилия (Если будете с парой,<br> укажите несколько имен) <br>
@@ -87,20 +98,40 @@
 			<div class="survey__choose">Ваше присутствие:</div>
 			<div class="survey__options">
 				<div class="options__item">
-					<input type="radio" checked id="formFirstAnswer" value="Yes" name="choosen" class="options__input">
+					<input type="radio" checked id="formFirstAnswer" value="Приду" name="choosen" class="options__input" required>
 					<label for="formFirstAnswer" class="options__label"><span>Я с удовольствием приду</span></label>
 				</div>
 				<div class="options__item">
-					<input type="radio" id="formSecondAnswer" value="No" name="choosen" class="options__input">
+					<input type="radio" id="formSecondAnswer" value="Не приду" name="choosen" class="options__input">
 					<label for="formSecondAnswer" class="options__label"><span>К сожалению, не смогу присутствовать</span></label>
 				</div>
 				<div class="options__item">
-					<input type="radio" id="formThirdAnswer" value="double" name="choosen" class="options__input">
+					<input type="radio" id="formThirdAnswer" value="Нас будет двое" name="choosen" class="options__input">
 					<label for="formThirdAnswer" class="options__label"><span>Буду со своей парой</span></label>
 				</div>
 			</div>
 			<button class="form__button" id="button" type="submit">Отправить</button>
 		</form>
+
+		<script>
+			document.getElementById('contactForm').addEventListener('submit', function(event) {
+				event.preventDefault(); // Не обновляйте страницу, пока сообщение не отправлено
+				const selectedOption = document.querySelector('input[name="choosen"]:checked');
+				var parms = {
+					name: document.getElementById('formNameSurename').value,
+					message: selectedOption.value,
+				};
+
+				emailjs.send('service_h80k3rl', 'template_1dquc9d', parms)
+					.then(function() {
+						alert('Сообщение успешно отправлено!');
+						document.getElementById('contactForm').reset(); // Очистка формы после отправки
+					}, function(error) {
+						alert('Ошибка отправки: ' + JSON.stringify(error));
+					});
+			});
+		</script>
+
 
 		<footer class="footer">
 
@@ -109,7 +140,7 @@
 	<!-- <div id="popup" aria-hidden="true" class="popup">
    
 </div> -->
-	<script src="js/app.min.js?_v=20240829130259"></script>
+	<script src="js/app.min.js?_v=20240829145826"></script>
 </body>
 
 </html>
