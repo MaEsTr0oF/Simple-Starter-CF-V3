@@ -39,16 +39,16 @@ body{
       padding: rem(80) 0 ;
       display:inline-block;
    }
-   &__congratulation::after{
-      content: " ";
-      bottom:10%;
-      right: -5%;
-      //left:20%;
-      width: 110%;
-      height: 1px;
-      position:absolute;
-      background-color: black;
-   }
+   // &__congratulation::after{
+   //    content: " ";
+   //    bottom:10%;
+   //    right: -5%;
+   //    //left:20%;
+   //    width: 110%;
+   //    height: 1px;
+   //    position:absolute;
+   //    background-color: black;
+   // }
    // .page__WH
 
    &__WH {
