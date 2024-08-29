@@ -143,7 +143,7 @@ body {
   position: relative;
   width: 320px;
   margin: 0px auto;
-  top: 10vh;
+  top: 60vh;
   text-align: center;
   line-height: 120%;
   -webkit-animation: screensaver 5s ease forwards;
@@ -454,6 +454,12 @@ input:focus {
   top: 3px;
   -webkit-box-shadow: 0 2px 0 #30171b;
           box-shadow: 0 2px 0 #30171b;
+}
+
+@media (max-width: 740px) {
+  .title {
+    top: 10vh;
+  }
 }
 
 .webp .last-message{ background-image: url(../img/decor/break.webp); }
