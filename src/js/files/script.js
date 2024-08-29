@@ -56,32 +56,7 @@ var i = 1;
 },4000);
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('form');
 
-  form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      let formData = new FormData(form);
-
-      try {
-          let response = await fetch('sendmail.php', {
-              method: 'POST',
-              body: formData
-          });
-
-          if (response.ok) {
-              const result = await response.json(); // Получаем JSON-ответ
-              alert(result.message); // Отображаем сообщение от сервера
-              form.reset(); // Сброс формы после отправки
-          } else {
-              alert('Ошибка при отправке данных');
-          }
-      } catch (error) {
-          alert('Ошибка при отправке: ' + error.message);
-      }
-  });
-});
 
 
 

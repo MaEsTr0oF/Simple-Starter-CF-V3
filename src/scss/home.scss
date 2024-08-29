@@ -1,4 +1,8 @@
 //====================================================================================================
+body{
+   background-color: rgb(244, 212, 217);
+   
+}
 .off{
    opacity: 0;
    transform: translateY(20px);
@@ -159,16 +163,18 @@
    // .survey__title
 
    &__title {
-
+      background-color: rgb(244, 212, 217);
       // .survey__title_nameSurename
 
       &_nameSurename {
+         background-color: rgb(244, 212, 217);
          padding-bottom: calc(20px + 20 * (100vw / 1440));
       }
 
       // .survey__title_input
 
       &_input {
+         background-color: rgb(244, 212, 217);
          display:inline-block;
          padding: calc(40px + 20 * (100vw / 1440));
          padding-left:  calc(0px + 60 * (100vw / 1440));
@@ -275,6 +281,7 @@ input:focus {outline: none;}
    transition: background-color 0.5s ease 0s;
    position: relative;
    top:0;
+   margin:40px  0 0 calc(0px + 250 * (100vw / 1440));
 }
 
 .form__button:hover{

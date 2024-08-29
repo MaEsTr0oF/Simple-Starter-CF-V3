@@ -5,6 +5,7 @@
 })
 
 <body>
+  
     <div class="wrapper">
         @@include('html/_header.htm',{})
         <main id="page" class="page">
@@ -58,7 +59,7 @@
               <div class="last-message__second-title">ПРОСИМ ПОДТВЕРДИТЬ ВАШЕ<br> ПРИСУТСТВИЕ ДО <span>01.04.2024</span></div>
             </div>
           </div>
-          <form class="survey" id="form">
+          <form class="survey" id="contactForm">
             <div class="survey__title">
                 <label for="formNameSurename" class="survey__title_nameSurename">
                     Имя и Фамилия (Если будете с парой,<br> укажите несколько имен) <br>
@@ -68,21 +69,41 @@
             <div class="survey__choose">Ваше присутствие:</div>
             <div class="survey__options">
                 <div class="options__item">
-                    <input type="radio" checked id="formFirstAnswer" value="Yes" name="choosen" class="options__input">
+                    <input type="radio" checked id="formFirstAnswer" value="Приду" name="choosen" class="options__input" required>
                     <label for="formFirstAnswer" class="options__label"><span>Я с удовольствием приду</span></label>
                 </div>
                 <div class="options__item">
-                    <input type="radio" id="formSecondAnswer" value="No" name="choosen" class="options__input">
+                    <input type="radio" id="formSecondAnswer" value="Не приду" name="choosen" class="options__input">
                     <label for="formSecondAnswer" class="options__label"><span>К сожалению, не смогу присутствовать</span></label>
                 </div>
                 <div class="options__item">
-                    <input type="radio" id="formThirdAnswer" value="double" name="choosen" class="options__input">
+                    <input type="radio" id="formThirdAnswer" value="Нас будет двое" name="choosen" class="options__input">
                     <label for="formThirdAnswer" class="options__label"><span>Буду со своей парой</span></label>
                 </div>
             </div>
             <button class="form__button" id="button" type="submit">Отправить</button>
         </form>
         
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Не обновляйте страницу, пока сообщение не отправлено
+                const selectedOption = document.querySelector('input[name="choosen"]:checked');
+                var parms = {
+                    name: document.getElementById('formNameSurename').value,
+                    message: selectedOption.value,
+                };
+        
+                emailjs.send('service_h80k3rl', 'template_1dquc9d',parms)
+                    .then(function() {
+                        alert('Сообщение успешно отправлено!');
+                        document.getElementById('contactForm').reset(); // Очистка формы после отправки
+                    }, function(error) {
+                        alert('Ошибка отправки: ' + JSON.stringify(error));
+                    });
+            });
+        </script>
+        
+      
         @@include('html/_footer.htm',{})
     </div>
     @@include('html/_popup.htm',{})
