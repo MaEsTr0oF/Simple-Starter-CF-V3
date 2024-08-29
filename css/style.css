@@ -443,7 +443,7 @@ input:focus {
   transition: background-color .5s ease 0s;
   position: relative;
   top: 0;
-  margin: 40px 0 0 calc(0px + 17.3611111111vw);
+  margin: 40px 0 100px calc(0px + 17.3611111111vw);
 }
 
 .form__button:hover {
