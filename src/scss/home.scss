@@ -281,7 +281,7 @@ input:focus {outline: none;}
    transition: background-color 0.5s ease 0s;
    position: relative;
    top:0;
-   margin:40px  0 0 calc(0px + 250 * (100vw / 1440));
+   margin:40px  0 100px calc(0px + 250 * (100vw / 1440));
 }
 
 .form__button:hover{
