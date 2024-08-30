@@ -18,7 +18,7 @@ func main() {
 		port = "8080"
 	}
 
-	http.HandleFunc("/api/", handlers.HandleUserData)
+	http.HandleFunc("/api", handlers.HandleUserData)
 
 	err := http.ListenAndServe(":"+port, nil)
 	if err != nil {
