@@ -3,7 +3,7 @@ name: Deploy 1.0
 on:
     push:
         branches:
-            master
+            backend
             
 jobs:
     deploy:
@@ -27,9 +27,34 @@ jobs:
             -   name: List build directory
                 run: ls -la ./dist
 
-            -   name: Deploy
+            -   name: Set up Go
+                uses: actions/setup-go@v3
+                with:
+                    go-version: '1.23'
+
+            -   name: Install Go dependencies
+                working-directory: ./api
+                run: go mod tidy
+
+            -   name: Build Go API
+                working-directory: ./api
+                run: go build -o ./build/v1
+
+            -   name: Run Go API
+                working-directory: ./api
+                env:
+                    SMTP_HOST: ${{ secrets.SMTP_HOST }}
+                    SMTP_PORT: ${{ secrets.SMTP_PORT }}
+                    SMTP_USER: ${{ secrets.SMTP_USER }}
+                    SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+                run: ./build/v1
+
+            -   name: Deploy 
                 uses: peaceiris/actions-gh-pages@v3
                 with:
                     github_token: ${{ secrets.GITHUB_TOKEN }}
                     publish_dir: ./dist
+            
+            -   name: Test API
+                run: curl -X POST http://localhost:8080/api -H "Content-Type:aplication/json" -d '"FirstAndLastNames":"test testovich"'
 
