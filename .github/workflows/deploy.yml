@@ -38,7 +38,7 @@ jobs:
 
             -   name: Build Go API
                 working-directory: ./api
-                run: go build -o ./build/v1
+                run: go build -o ./build/v1 ./cmd/main.go
 
             -   name: Run Go API
                 working-directory: ./api
