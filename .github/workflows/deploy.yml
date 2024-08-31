@@ -47,7 +47,7 @@ jobs:
                     SMTP_PORT: ${{ secrets.SMTP_PORT }}
                     SMTP_USER: ${{ secrets.SMTP_USER }}
                     SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-                run: ./build/v1
+                run: ./build/v1 &
 
             -   name: Deploy 
                 uses: peaceiris/actions-gh-pages@v3
