@@ -3,7 +3,7 @@ name: Deploy 1.0
 on:
     push:
         branches:
-            backend
+            master
             
 jobs:
     deploy:
