@@ -57,5 +57,5 @@ jobs:
                     publish_dir: ./dist
             
             -   name: Test API
-                run: curl -X POST http://localhost:8080/api -H "Content-Type:aplication/json" -d '{"FirstAndLastNames":"test testovich", attendance":1}'
+                run: curl -X POST http://localhost:8080/api -H "Content-Type:application/json" -d '{"FirstAndLastNames":"test testovich", attendance":1}'
 
