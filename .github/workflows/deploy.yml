@@ -57,7 +57,7 @@ jobs:
                 run: |
                     ./build/v1 &
                     sleep 10
-                    ngrok http 8080
+                    ngrok http 8080 > /dev/null &
                     sleep 5
 
             -   name: Deploy 
