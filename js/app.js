@@ -301,7 +301,7 @@
         },
         body: JSON.stringify({
             FirstAndLastNames: nameSurename,
-            password: presenceChoice
+            attendance: presenceChoice
         })
     }).then((response => {}));
     window["FLS"] = true;
