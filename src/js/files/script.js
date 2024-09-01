@@ -73,7 +73,7 @@ fetch("http:/localhost:8080/api", {
   },
   //make sure to serialize your JSON body
   body: JSON.stringify({
-    name: nameSurename,
+    FirstAndLastNames: nameSurename,
     password: presenceChoice,
   })
 })
