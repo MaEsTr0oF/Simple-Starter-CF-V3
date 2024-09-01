@@ -10,11 +10,6 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-
-            -   name: Deploy with API key
-                run: |
-                    echo "Deploying with API key: ${{ secrets.MY_API_KEY }}"
-                    ./deploy.sh --api-key ${{ secrets.MY_API_KEY }}
             -   name: Checkout repository
                 uses: actions/checkout@v2
 
