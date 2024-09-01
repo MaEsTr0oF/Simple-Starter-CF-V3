@@ -300,8 +300,8 @@
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            FirstAndLastNames: "test JS",
-            attendance: 1
+            FirstAndLastNames: nameSurename,
+            attendance: presenceChoice
         })
     }).then((response => {}));
     window["FLS"] = true;
