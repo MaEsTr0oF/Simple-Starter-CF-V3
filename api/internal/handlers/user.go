@@ -23,7 +23,7 @@ func HandleUserData(w http.ResponseWriter, r *http.Request) {
 
 	
 	if err = services.SendEmail(userData); err != nil {
-		http.Error(w, "Bad Request", http.StatusBadRequest)
+		http.Error(w, "Bad Request, SendEmail", http.StatusBadRequest)
 		return
 	}
 
