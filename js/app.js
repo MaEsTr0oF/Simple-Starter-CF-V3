@@ -288,6 +288,22 @@
         i++;
         if (i == 5) i = 1;
     }), 4e3);
+    document.getElementById("contactForm").addEventListener("submit", (function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        formData.get("surename");
+        formData.get("choosen");
+    }));
+    fetch("http:/localhost:8080/api", {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: nameSurename,
+            password: presenceChoice
+        })
+    }).then((response => {}));
     window["FLS"] = true;
     isWebp();
     menuInit();
