@@ -20,6 +20,7 @@ func Test(t *testing.T) {
 
 	var dataTest = models.DataUser{
 		FirstAndLastNames: "Адель Альзоаби",
+		Attendance: 1,
 	}
 
 	err := SendEmail(dataTest)

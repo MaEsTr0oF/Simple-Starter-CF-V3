@@ -19,8 +19,18 @@ func SendEmail(dataUser models.DataUser) error {
 	toHeader := "To: " + recipientEmail +"\n"
 	replyTo := "Reply-To: " + smtp_user + "\n"
 	contentType := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\";\n\n"
+	
+	var counterParticipantString string
+	switch dataUser.Attendance {
+	case 0:
+		counterParticipantString = "Не приду"
+	case 1:
+		counterParticipantString = "Приду один(одна)"
+	case 2:
+		counterParticipantString = "Придем вдвоем"
+	}
 
-	body := fmt.Sprintf("<h1>Свадьба</h1><p>Новый участник(и): %s</p>", dataUser.FirstAndLastNames)
+	body := fmt.Sprintf("<h1>Свадьба</h1><p>Новый участник(и): %s</p><p>%s<p>", dataUser.FirstAndLastNames, counterParticipantString)
 
 	msg := []byte(subject + fromHeader + toHeader + replyTo + contentType + body)
 
