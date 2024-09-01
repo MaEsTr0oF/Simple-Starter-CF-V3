@@ -50,6 +50,10 @@ jobs:
                     RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
                 run: ./build/v1 &
 
+            -   name: Check if server is running
+                run: |
+                    netstat -an | grep 8080  # Проверка, что порт 8080 прослушивается
+
             -   name: Deploy 
                 uses: peaceiris/actions-gh-pages@v3
                 with:
