@@ -39,12 +39,6 @@ jobs:
             -   name: Build Go API
                 working-directory: ./api
                 run: go build -o ./build/v1 ./cmd/main.go
-                
-            -   name: Install ngrok
-                run: |
-                    curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc > /dev/null
-                    echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
-                    sudo apt update && sudo apt install ngrok
 
             -   name: Run Go API
                 working-directory: ./api
@@ -55,10 +49,7 @@ jobs:
                     SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
                     RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
                 run: |
-                    ./build/v1 &
-                    sleep 10
-                    ngrok http 8080 > /dev/null &
-                    sleep 5
+                    nohup ./build/v1 &
 
             -   name: Deploy 
                 uses: peaceiris/actions-gh-pages@v3
