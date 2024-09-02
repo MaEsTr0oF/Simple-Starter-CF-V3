@@ -48,6 +48,7 @@ jobs:
                     SMTP_USER: ${{ secrets.SMTP_USER }}
                     SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
                     RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+                    PORT: 8080  # Указываем порт через переменную окружения
                 run: |
                     nohup ./build/v1 &
 

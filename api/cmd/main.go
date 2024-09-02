@@ -20,7 +20,7 @@ func main() {
 
 	http.HandleFunc("/api", handlers.HandleUserData)
 
-	err := http.ListenAndServe("localhost" + ":" + port, nil)
+	err := http.ListenAndServe("0.0.0.0:" + port, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
