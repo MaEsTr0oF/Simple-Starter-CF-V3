@@ -64,7 +64,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   // Получаем значения полей
   const nameSurename = formData.get('surename');
   const presenceChoice = formData.get('choosen');
-  fetch("api", {
+  fetch("/api", {
     method: "post",
     headers: {
       'Content-Type': 'application/json',
