@@ -293,7 +293,7 @@
         const formData = new FormData(this);
         const nameSurename = formData.get("surename");
         const presenceChoice = formData.get("choosen");
-        fetch("/api", {
+        fetch("http://localhost:8080/api", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
