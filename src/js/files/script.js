@@ -64,22 +64,22 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   // Получаем значения полей
   const nameSurename = formData.get('surename');
   const presenceChoice = formData.get('choosen');
+  fetch("http:/localhost:8080/api", {
+    method: "post",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    //make sure to serialize your JSON body
+    body: JSON.stringify({
+      FirstAndLastNames: nameSurename,
+      attendance: presenceChoice,
+    })
+  })
+  .then( (response) => {
+     alert("ЖОПА");
+  });  
 });
 
-fetch("http:/localhost:8080/api", {
-  method: "post",
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  //make sure to serialize your JSON body
-  body: JSON.stringify({
-    FirstAndLastNames: nameSurename,
-    attendance: presenceChoice,
-  })
-})
-.then( (response) => {
-   //do something awesome that makes the world a better place
-});
 
 
 
