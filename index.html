@@ -6,11 +6,11 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240901184949">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240902062638">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js?_v=20240901184949">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js?_v=20240902062638">
 	</script>
 	<script type="text/javascript">
 		(function() {
@@ -113,24 +113,24 @@
 			<button class="form__button" id="button" type="submit">Отправить</button>
 		</form>
 
-		<script>
-			document.getElementById('contactForm').addEventListener('submit', function(event) {
-				event.preventDefault(); // Не обновляйте страницу, пока сообщение не отправлено
-				const selectedOption = document.querySelector('input[name="choosen"]:checked');
-				var parms = {
-					name: document.getElementById('formNameSurename').value,
-					message: selectedOption.value,
-				};
-
-				emailjs.send('service_h80k3rl', 'template_1dquc9d', parms)
-					.then(function() {
-						alert('Сообщение успешно отправлено!');
-						document.getElementById('contactForm').reset(); // Очистка формы после отправки
-					}, function(error) {
-						alert('Ошибка отправки: ' + JSON.stringify(error));
-					});
-			});
-		</script>
+		<!-- <script>
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Не обновляйте страницу, пока сообщение не отправлено
+                const selectedOption = document.querySelector('input[name="choosen"]:checked');
+                var parms = {
+                    name: document.getElementById('formNameSurename').value,
+                    message: selectedOption.value,
+                };
+        
+                emailjs.send('service_h80k3rl', 'template_1dquc9d',parms)
+                    .then(function() {
+                        alert('Сообщение успешно отправлено!');
+                        document.getElementById('contactForm').reset(); // Очистка формы после отправки
+                    }, function(error) {
+                        alert('Ошибка отправки: ' + JSON.stringify(error));
+                    });
+            });
+        </script> -->
 
 
 		<footer class="footer">
@@ -140,7 +140,7 @@
 	<!-- <div id="popup" aria-hidden="true" class="popup">
    
 </div> -->
-	<script src="js/app.min.js?_v=20240901184949"></script>
+	<script src="js/app.min.js?_v=20240902062638"></script>
 </body>
 
 </html>

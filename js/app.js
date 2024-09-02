@@ -291,19 +291,21 @@
     document.getElementById("contactForm").addEventListener("submit", (function(event) {
         event.preventDefault();
         const formData = new FormData(this);
-        formData.get("surename");
-        formData.get("choosen");
+        const nameSurename = formData.get("surename");
+        const presenceChoice = formData.get("choosen");
+        fetch("http:/localhost:8080/api", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                FirstAndLastNames: nameSurename,
+                attendance: presenceChoice
+            })
+        }).then((response => {
+            alert("ЖОПА");
+        }));
     }));
-    fetch("http:/localhost:8080/api", {
-        method: "post",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            FirstAndLastNames: nameSurename,
-            attendance: presenceChoice
-        })
-    }).then((response => {}));
     window["FLS"] = true;
     isWebp();
     menuInit();
