@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700&display=swap);
 
+@import url(https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap);
+
+@import url(https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap);
+
+@import url(https://fonts.googleapis.com/css2?family=Marck+Script&display=swap);
+
 * {
   padding: 0px;
   margin: 0px;
@@ -22,7 +28,6 @@ body {
 body {
   color: #fff;
   line-height: 1;
-  font-family: "Montserrat";
   font-size: 1rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -34,7 +39,6 @@ body {
 input,
 button,
 textarea {
-  font-family: "Montserrat";
   font-size: inherit;
 }
 
@@ -76,7 +80,9 @@ h6 {
 }
 
 body {
-  font-weight: 500;
+  font-family: "Great Vibes",cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .lock body {
@@ -152,10 +158,11 @@ body {
 }
 
 .title_first {
-  margin-left: calc(0px - 1.3888888889vw);
+  margin-left: calc(50px - .5555555556vw);
 }
 
 .title_second {
+  left: 20px;
   position: relative;
   display: inline-block;
 }
@@ -228,10 +235,17 @@ body {
 }
 
 .page {
+  font-family: "Marck Script",cursive;
+  font-weight: 400;
+  font-style: normal;
   color: #000;
   text-align: center;
   font-size: calc(20px + 1.3888888889vw);
   line-height: 130%;
+}
+
+.page__cong {
+  padding: 2.5rem 0;
 }
 
 .page__title {
@@ -249,7 +263,7 @@ body {
 }
 
 .page__WH {
-  padding: 5rem 0 2.5rem 0;
+  padding: 2.5rem 0 2.5rem 0;
 }
 
 .page__place {
@@ -257,11 +271,15 @@ body {
 }
 
 .page__guests {
-  padding: 0 0 5rem 0;
+  padding: 2.5rem 0 2.5rem 0;
 }
 
 .page__DC {
-  padding: 2.5rem 0;
+  padding: 1.25rem 0;
+}
+
+.page__clother {
+  padding-bottom: 30px;
 }
 
 .on {
@@ -290,7 +308,7 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  height: calc(620px + 23.4375vw);
+  height: calc(520px + 31.25vw);
 }
 
 .no-webp .last-message{
@@ -311,7 +329,15 @@ body {
   margin: calc(40px + 1.3888888889vw) auto;
 }
 
+.line__image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 3.125rem;
+  width: 7%;
+}
+
 .survey {
+  background-color: #ffdab9;
   margin-top: 3.75rem;
   color: #000;
   text-align: center;
@@ -321,21 +347,21 @@ body {
 }
 
 .survey__title {
-  background-color: #f4d4d9;
+  background-color: #ffdab9;
 }
 
 .survey__title_nameSurename {
-  background-color: #f4d4d9;
+  background-color: #ffdab9;
   padding-bottom: calc(20px + 1.3888888889vw);
 }
 
 .survey__title_input {
-  background-color: #f4d4d9;
+  background-color: #ffdab9;
   display: inline-block;
   padding: calc(40px + 1.3888888889vw);
   padding-left: calc(0px + 4.1666666667vw);
   font-size: calc(14px + 1.3888888889vw);
-  width: calc(100% + 10.4166666667vw);
+  width: calc(55% + 10.4166666667vw);
   text-align: center;
   color: #000;
 }
@@ -349,9 +375,9 @@ body {
   content: " ";
   position: absolute;
   top: -80%;
-  left: -60%;
+  left: -110%;
   background-color: #000;
-  width: 220%;
+  width: 320%;
   height: 2px;
 }
 
@@ -456,9 +482,13 @@ input:focus {
           box-shadow: 0 2px 0 #30171b;
 }
 
-@media (max-width: 740px) {
+@media (max-width: 980px) {
   .title {
     top: 10vh;
+  }
+
+  .title_second {
+    left: 0;
   }
 }
 
