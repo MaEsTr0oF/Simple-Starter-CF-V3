@@ -14,14 +14,13 @@ func HandleUserData(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var userData models.DataUser
-	
+
 	err := json.NewDecoder(r.Body).Decode(&userData)
 	if err != nil {
 		http.Error(w, "Bad request", http.StatusBadRequest)
 		return
 	}
 
-	
 	if err = services.SendEmail(userData); err != nil {
 		http.Error(w, "Bad Request, SendEmail", http.StatusBadRequest)
 		return
@@ -32,15 +31,15 @@ func HandleUserData(w http.ResponseWriter, r *http.Request) {
 }
 
 func HandleCors(next http.Handler) http.Handler {
-    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-        w.Header().Set("Access-Control-Allow-Origin", "*")
-        w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
-        w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
-        if r.Method == "POST" {
-            return
-        }
+		if r.Method == "POST" {
+			return
+		}
 
-        next.ServeHTTP(w, r)
-    })
+		next.ServeHTTP(w, r)
+	})
 }

@@ -16,10 +16,10 @@ func SendEmail(dataUser models.DataUser) error {
 
 	subject := "Subject: Я - новый участник свадьбы!\n"
 	fromHeader := "From: " + smtp_user + "\n"
-	toHeader := "To: " + recipientEmail +"\n"
+	toHeader := "To: " + recipientEmail + "\n"
 	replyTo := "Reply-To: " + smtp_user + "\n"
 	contentType := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\";\n\n"
-	
+
 	var counterParticipantString string
 	switch dataUser.Attendance {
 	case 0:
