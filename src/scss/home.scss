@@ -157,6 +157,17 @@ body{
       
    }
 }
+.line{
+   &__image::after{
+
+   }
+   &__image img{
+      object-fit: cover;
+      margin:0 rem(50);
+      width:7%;
+      //height:10%;
+   }
+}
 .survey {
    background-color: rgb(255, 218, 185);
    margin-top:rem(60);
