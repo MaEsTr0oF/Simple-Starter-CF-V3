@@ -116,11 +116,10 @@ body{
    width: 100%;
    
    //height: rem(740);
-   height:calc(620px + 300 * (100vw / 1280));
+   height:calc(520px + 400 * (100vw / 1280));
 }
 .last-message {
    margin-top:rem(-48);
-   //margin-right: rem(-200);
    color: black;
    text-align: center;
    height: rem(550);
