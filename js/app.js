@@ -293,7 +293,8 @@
         const formData = new FormData(this);
         const nameSurename = formData.get("surename");
         const presenceChoice = formData.get("choosen");
-        fetch("http://localhost:8080/api", {
+        const apiUrl = process.env.NGROK_URL;
+        fetch(`${apiUrl}/api`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
