@@ -10,53 +10,69 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            -   name: Checkout repository
-                uses: actions/checkout@v2
+            - name: Checkout repository
+              uses: actions/checkout@v2
 
-            -   name: Set up Node.js
-                uses: actions/setup-node@v2
-                with:
-                    node-version: "20"
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "20"
 
-            -   name: Install dependencies
-                run: npm install
+            - name: Install dependencies
+              run: npm install
 
-            -   name: Build the project
-                run: npm run build
+            - name: Build the project
+              run: npm run build
 
-            -   name: List build directory
-                run: ls -la ./dist
+            - name: List build directory
+              run: ls -la ./dist
 
-            -   name: Set up Go
-                uses: actions/setup-go@v3
-                with:
-                    go-version: '1.23'
+            - name: Set up Go
+              uses: actions/setup-go@v3
+              with:
+                  go-version: '1.23'
 
-            -   name: Install Go dependencies
-                working-directory: ./api
-                run: go mod tidy
+            - name: Install Go dependencies
+              working-directory: ./api
+              run: go mod tidy
 
-            -   name: Build Go API
-                working-directory: ./api
-                run: go build -o ./build/v1 ./cmd/main.go
+            - name: Build Go API
+              working-directory: ./api
+              run: go build -o ./build/v1 ./cmd/main.go
 
-            -   name: Run Go API
-                working-directory: ./api
-                env:
-                    SMTP_HOST: ${{ secrets.SMTP_HOST }}
-                    SMTP_PORT: ${{ secrets.SMTP_PORT }}
-                    SMTP_USER: ${{ secrets.SMTP_USER }}
-                    SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-                    RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
-                    PORT: 8080  # Указываем порт через переменную окружения
-                run: |
-                    nohup ./build/v1 &
+            - name: Run Go API
+              working-directory: ./api
+              env:
+                  SMTP_HOST: ${{ secrets.SMTP_HOST }}
+                  SMTP_PORT: ${{ secrets.SMTP_PORT }}
+                  SMTP_USER: ${{ secrets.SMTP_USER }}
+                  SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+                  RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+                  PORT: 8080
+              run: |
+                nohup ./build/v1 &
 
-            -   name: Deploy 
-                uses: peaceiris/actions-gh-pages@v3
-                with:
-                    github_token: ${{ secrets.GITHUB_TOKEN }}
-                    publish_dir: ./dist
+            - name: Install ngrok
+              run: |
+                curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null
+                echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
+                sudo apt-get update
+                sudo apt-get install ngrok
 
-            -   name: Test API
-                run: curl -X POST http://localhost:8080/api -H "Content-Type:application/json" -d '{"FirstAndLastNames":"test testovich", "attendance":0}'
+            - name: Start ngrok and get public URL
+              id: ngrok
+              run: |
+                ngrok authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+                nohup ngrok http 8080 > /dev/null & sleep 10
+                curl --silent http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].public_url' > ngrok_url.txt
+                echo "NGROK_URL=$(cat ngrok_url.txt)" >> $GITHUB_ENV
+
+            - name: Deploy 
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./dist
+
+            - name: Test API via ngrok
+              run: |
+                curl -X POST ${{ env.NGROK_URL }}/api -H "Content-Type:application/json" -d '{"FirstAndLastNames":"test testovich", "attendance":0}'
