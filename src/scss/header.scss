@@ -39,13 +39,14 @@
    color:black;
    //font-size: calc(80px + 16 * (100vw / 1280));
    &_first {
-      margin-left: calc(0px - 20 * (100vw / 1440));
+      margin-left: calc(50px - 8 * (100vw / 1440));
       //position: absolute;
 
    }
 
    // .title_second
    &_second{
+      left:20px;
       position: relative;
       display:inline-block;
            
@@ -75,10 +76,15 @@
       //margin-left: -40px;
    }
 }
-@media (max-width:740px) {
+@media (max-width:980px) {
    .title{
       top:10vh;
+      &_second{
+         left:0;
+      }
+      
    }
+   
 };
 @keyframes screensaver {
    from {

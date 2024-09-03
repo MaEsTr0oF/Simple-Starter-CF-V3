@@ -55,32 +55,6 @@ var i = 1;
   }
 },4000);
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Отменяем стандартное поведение формы
-
-  // Создаем объект FormData для получения данных из формы
-  const formData = new FormData(this);
-
-  // Получаем значения полей
-  const nameSurename = formData.get('surename');
-  const presenceChoice = formData.get('choosen');
-  const apiUrl = process.env.NGROK_URL;
-
-  fetch(`${apiUrl}/api`, {
-    method: "post",
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    //make sure to serialize your JSON body
-    body: JSON.stringify({
-      FirstAndLastNames: nameSurename,
-      attendance: presenceChoice,
-    })
-  })
-  .then( (response) => {
-     alert("ЖОПА");
-  });  
-});
 
 
 

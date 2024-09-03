@@ -1,4 +1,7 @@
 //====================================================================================================
+
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
 body{
    background-color: rgb(255, 218, 185);
    
@@ -9,14 +12,17 @@ body{
    transition: opacity 3s ease, transform 3s ease;
 }
 .page {
+   font-family: "Marck Script", cursive;
+  font-weight: 400;
+  font-style: normal;
    color:black;
    text-align: center;
    font-size: calc(20px + 20 * (100vw / 1440));
    line-height: 130%;
    
    //animation: screensaver 5s ease forwards;
-   &__container {
-      //padding:0 rem(200);
+   &__cong {
+      padding: rem(40) 0;
    }
 
    // .page__title
@@ -52,7 +58,7 @@ body{
    // .page__WH
 
    &__WH {
-      padding: rem(80) 0 rem(40) 0;
+      padding: rem(40) 0 rem(40) 0;
    }
 
    // .page__place
@@ -64,18 +70,19 @@ body{
    // .page__guests
 
    &__guests {
-      padding: 0 0 rem(80) 0;
+      padding: rem(40) 0 rem(40) 0;
    }
 
    // .page__DC
 
    &__DC {
-      padding:rem(40) 0;
+      padding:rem(20) 0;
    }
 
    // .page__clother
 
    &__clother {
+      padding-bottom: 30px;
    }
 }
 .on{
@@ -152,6 +159,7 @@ body{
    }
 }
 .survey {
+   background-color: rgb(255, 218, 185);
    margin-top:rem(60);
    color:black;
    text-align: center;
@@ -161,23 +169,23 @@ body{
    // .survey__title
 
    &__title {
-      background-color: rgb(244, 212, 217);
+      background-color: rgb(255, 218, 185);
       // .survey__title_nameSurename
 
       &_nameSurename {
-         background-color: rgb(244, 212, 217);
+         background-color: rgb(255, 218, 185);
          padding-bottom: calc(20px + 20 * (100vw / 1440));
       }
 
       // .survey__title_input
 
       &_input {
-         background-color: rgb(244, 212, 217);
+         background-color: rgb(255, 218, 185);
          display:inline-block;
          padding: calc(40px + 20 * (100vw / 1440));
          padding-left:  calc(0px + 60 * (100vw / 1440));
          font-size: calc(14px + 20 * (100vw / 1440));
-         width:calc(100% + 150 * (100vw / 1440));
+         width:calc(55% + 150 * (100vw / 1440));
          text-align: center;
          //background-color: transparent;
          color:black;
@@ -196,9 +204,9 @@ body{
       content: " ";
       position: absolute;
       top:-80%;
-      left:-60%;
+      left:-110%;
       background-color: black;
-      width: 220%;
+      width: 320%;
       height: 2px;
 
 
