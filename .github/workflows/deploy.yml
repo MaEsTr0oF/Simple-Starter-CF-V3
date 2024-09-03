@@ -62,7 +62,6 @@ jobs:
             - name: Start ngrok and get public URL
               id: ngrok
               run: |
-                echo "$NGROK_AUTH_TOKEN" > ~/.ngrok2/ngrok.yml  # Создаем конфигурацию ngrok в памяти
                 nohup ngrok http 8080 --authtoken=$NGROK_AUTH_TOKEN > /dev/null & sleep 10
                 NGROK_URL=$(curl --silent http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].public_url')
                 echo "NGROK_URL=$NGROK_URL" >> $GITHUB_ENV
