@@ -269,7 +269,7 @@ body {
 
 .page__congratulation {
   position: relative;
-  padding: 5rem 0;
+  padding: 2.5rem 0;
   display: inline-block;
 }
 
@@ -290,6 +290,8 @@ body {
 }
 
 .page__clother {
+  margin: 0 auto;
+  width: 60vw;
   padding-bottom: 30px;
 }
 
@@ -298,6 +300,10 @@ body {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
+}
+
+.data {
+  font-family: "Marck Script",cursive;
 }
 
 .data__number {
@@ -326,6 +332,7 @@ body {
   background-image: url("../img/decor/break.png"); }
 
 .last-message {
+  font-family: "Marck Script",cursive;
   margin-top: -3rem;
   color: #000;
   text-align: center;
@@ -348,9 +355,10 @@ body {
 }
 
 .jopa {
+  margin-top: 4%;
   position: relative;
-  left: calc(10% + 5.5555555556vw);
-  top: calc(35% - 1.3888888889vw);
+  left: calc(0% + 7.6219512195vw);
+  top: calc(45% - 1.9444444444vw);
   width: 50px;
   height: 50px;
   font-size: calc(25px + 1.0416666667vw);
@@ -363,6 +371,7 @@ body {
   width: 30%;
   height: 30%;
   border-radius: 50%;
+  top: -15%;
   left: 34px;
 }
 
@@ -400,6 +409,7 @@ body {
 }
 
 .survey {
+  font-family: "Marck Script",cursive;
   background-color: #ffdab9;
   margin-top: 3.75rem;
   color: #000;
@@ -506,6 +516,7 @@ input:focus {
 }
 
 .form__button {
+  font-family: Arial,Helvetica,sans-serif;
   width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -543,6 +554,27 @@ input:focus {
   top: 3px;
   -webkit-box-shadow: 0 2px 0 #30171b;
           box-shadow: 0 2px 0 #30171b;
+}
+
+.Ekaterina {
+  font-family: "Marck Script",cursive;
+  width: 60vw;
+  line-height: 130%;
+  letter-spacing: 1px;
+  margin: 1.25rem auto;
+  padding-bottom: 5rem;
+  font-size: calc(14px + 1.25vw);
+  color: #000;
+}
+
+.a {
+  background-color: #cfb39a;
+}
+
+.ft {
+  font-family: "Great Vibes",cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @media (max-width: 1290px) {
@@ -615,7 +647,7 @@ input:focus {
 
 @media (max-width: 450px) {
   .jopa {
-    top: 15%;
+    top: 20%;
   }
 
   .jopa::before {
@@ -625,7 +657,7 @@ input:focus {
   }
 
   .line__image img {
-    width: 65%;
+    width: 55%;
   }
 
   .line__image {
