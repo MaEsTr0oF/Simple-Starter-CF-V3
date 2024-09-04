@@ -11,13 +11,8 @@
         <main id="page" class="page">
             <div  class="page__container">
                 <div class="page__date off"><span class="data__number">28</span> сентября <span class="data__year">2024</span> года <br>состоится наша свадьба</div>
-                <div class="page__congratulation off">Приглашаем вас на торжество,<br> посвящённое нашему бракосочетанию. Мы будем рады,<br> если вы проведёте этот счастливый день с нами</div>
-                <div class="page__WH off">ЖДЕМ ВАС</div>
-                <div class="page__place off">Торжественная церемония состоится <br> в Шипиловском Дворце бракосочетания в 11:00 <br>
-                     по адресу г. Москва, ул. Шипиловский пр-д, 27
-                </div>
-                <div class="page__cong off">После торжественной части приглашаем  всех желающих <br> присоединиться к яркой фотосессии в парке "Царицыно"</div>
-                <div class="page__guests off">Праздничный банкет организован в кафе "Гараж" с 13:00 <br> по адресу г. Москва, ул. Ташкентская, 28с1 </div>
+                <div class="page__congratulation off">Приглашаем вас на торжество,<br> посвящённое нашему бракосочетанию.<br> Мы будем рады, если вы проведёте<br> этот счастливый день с нами</div>
+                <h1 class="ft">Расписание</h1>
                 <div class="page__line line">
                     <div class="line__image">
                         <div class="img"><img src="@img/decor/rings.svg" class="picture" alt=""></div>
@@ -28,13 +23,21 @@
                         <div class="jopa">13:00</div>
                     </div>
                 </div>
-                <div class="page__DC off">Дресс-код</div>
-                <div class="page__clother off">Мы очень старались сделать праздник <br>красивым и будем рады, если в своих нарядах <br>вы поддержите гамму нашей свадьбы</div>
+                <div class="page__DC off ft">Дресс-код</div>
+                <div class="page__clother off">Мы очень старались сделать праздник красивым и будем рады, если в своих нарядах вы поддержите гамму нашей свадьбы</div>
                 <div class="page__color">
                     <img src="@img/decor/color1.svg" alt="">
                     <img src="@img/decor/color2.svg" alt="">
                     <img src="@img/decor/color3.svg" alt="">
                 </div>
+                <div class="page__WH off ft">Ждём вас</div>
+                <div class="page__place off">Торжественная церемония состоится <br> в Шипиловском Дворце бракосочетания в 11:00 <br>
+                     по адресу г. Москва, ул. Шипиловский пр-д, 27
+                </div>
+                <div class="page__cong off">После торжественной части приглашаем  всех желающих <br> присоединиться к яркой фотосессии в парке "Царицыно"</div>
+                <div class="page__guests off">Праздничный банкет организован в кафе "Гараж" с 13:00 <br> по адресу г. Москва, ул. Ташкентская, 28с1 </div>
+                
+                
             </div>
         </main>
         <div class="slider" id="slider">
@@ -81,7 +84,7 @@
                 </label>
                 <input id="formNameSurename" type="text" placeholder="Имя и Фамилия" class="survey__title_input" name="surename" required>
             </div>
-            <div class="survey__choose">Ваше присутствие:</div>
+            <div class="survey__choose ft">Ваше присутствие:</div>
             <div class="survey__options">
                 <div class="options__item">
                     <input type="radio" checked id="formFirstAnswer" value="Придёт" name="choosen" class="options__input" required>
@@ -96,8 +99,10 @@
                     <label for="formThirdAnswer" class="options__label"><span>Не получится прийти</span></label>
                 </div>
             </div>
-            <button class="form__button" id="button" type="submit">Отправить</button>
+            <button class="form__button" id="button" type="submit ">Отправить</button>
         </form>
+        <div class="a"><h3 class="Ekaterina">Узнать подробности развлекательной программы, а также внести в неё свои коррективы можно, связавшись с ведущей нашего торжества Екатериной, по номеру +7 (926) 812-20-44</h3></div>
+        
         <script>
 
             document.getElementById('contactForm').addEventListener('submit', function(event) {

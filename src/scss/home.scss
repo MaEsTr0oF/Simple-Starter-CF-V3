@@ -50,7 +50,7 @@ body{
 
    &__congratulation {
       position:relative;
-      padding: rem(80) 0 ;
+      padding: rem(40) 0 ;
       display:inline-block;
    }
    // &__congratulation::after{
@@ -90,6 +90,8 @@ body{
    // .page__clother
 
    &__clother {
+      margin:0 auto;
+      width:60vw;
       padding-bottom: 30px;
    }
 }
@@ -98,7 +100,7 @@ body{
    transform: translateY(0);
 }
 .data {
-
+   font-family: "Marck Script", cursive;
    // .data__number
 
    &__number {
@@ -127,6 +129,7 @@ body{
    height:calc(520px + 400 * (100vw / 1280));
 }
 .last-message {
+   font-family: "Marck Script", cursive;
    //position:relative;
    margin-top:rem(-48);
    color: black;
@@ -176,9 +179,10 @@ body{
 }
 
 .jopa{
+   margin-top:4%;
    position: relative;
-   left:calc(10% + 80 * (100vw / 1440));
-   top:calc(35% - 20 * (100vw / 1440));
+   left:calc(0% + 125 * (100vw / 1640));
+   top:calc(45% - 28 * (100vw / 1440));
    width: 50px;
    height:50px;
    font-size: calc( 25px + 15 * ( 100vw / 1440 ));
@@ -190,7 +194,7 @@ body{
    width: 30%;
    height:30%;
    border-radius: 50%;
-   //top: -15px;
+   top:-15%;
    left:34px;
 }
 
@@ -282,7 +286,7 @@ body{
 }
 @media(max-width:450px){
    .jopa{
-      top:15%;
+      top:20%;
       //left:25%;
    }
    .jopa::before{
@@ -292,7 +296,7 @@ body{
    }
    .line{
       &__image img{
-         width: 65%;
+         width: 55%;
       }
       &__image{
          width: 80vw;
@@ -313,6 +317,7 @@ body{
 
 // }
 .survey {
+   font-family: "Marck Script", cursive;
    background-color: rgb(255, 218, 185);
    margin-top:rem(60);
    color:black;
@@ -423,6 +428,7 @@ input:focus {outline: none;}
 
 }
 .form__button{
+   font-family: Arial, Helvetica, sans-serif;
    width: 70%;
    display: flex;
    justify-content: center;
@@ -451,5 +457,24 @@ input:focus {outline: none;}
 .form__button:active{
    top:3px;
    box-shadow: 0 2px 0 rgb(48, 23, 27);
+}
+.Ekaterina{
+   font-family: "Marck Script", cursive;
+   width: 60vw;
+   line-height: 130%;
+   letter-spacing: 1px;
+   margin: rem(20) auto;
+   padding-bottom: rem(80);
+   font-size: calc(14px + 18 * (100vw / 1440));
+   color: black;
+   //box-shadow: 2px 2px 2px black;
+}
+.a{
+   background-color: rgb(207, 179, 154);;
+}
+.ft{
+   font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 //====================================================================================================
