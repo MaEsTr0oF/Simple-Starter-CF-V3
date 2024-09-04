@@ -274,15 +274,24 @@ body {
 }
 
 .page__WH {
-  padding: 2.5rem 0 2.5rem 0;
+  padding: 1.25rem 0 1.25rem 0;
+}
+
+.page__cong {
+  width: 60vw;
+  margin: 0 auto;
 }
 
 .page__place {
-  padding: 0 0 3.75rem 0;
+  width: 60vw;
+  margin: 0 auto;
+  padding: 0 0 1.875rem 0;
 }
 
 .page__guests {
-  padding: 2.5rem 0 2.5rem 0;
+  width: 60vw;
+  margin: 0 auto;
+  padding: 1.25rem 0 1.25rem 0;
 }
 
 .page__DC {
@@ -336,7 +345,6 @@ body {
   margin-top: -3rem;
   color: #000;
   text-align: center;
-  height: 34.375rem;
   width: 100%;
   font-size: calc(20px + 1.3888888889vw);
   line-height: 130%;
@@ -344,12 +352,15 @@ body {
 }
 
 .last-message__first-title {
+  width: 60vw;
   position: relative;
   z-index: 1;
   margin: calc(40px + 1.3888888889vw) auto;
 }
 
 .last-message__second-title {
+  width: 60vw;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
 }
@@ -411,7 +422,6 @@ body {
 .survey {
   font-family: "Marck Script",cursive;
   background-color: #ffdab9;
-  margin-top: 3.75rem;
   color: #000;
   text-align: center;
   font-size: calc(20px + 1.3888888889vw);
@@ -564,11 +574,11 @@ input:focus {
   margin: 1.25rem auto;
   padding-bottom: 5rem;
   font-size: calc(14px + 1.25vw);
-  color: #000;
+  color: #fff;
 }
 
 .a {
-  background-color: #cfb39a;
+  background-color: #a58e7a;
 }
 
 .ft {
