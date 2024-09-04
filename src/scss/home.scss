@@ -66,19 +66,26 @@ body{
    // .page__WH
 
    &__WH {
-      padding: rem(40) 0 rem(40) 0;
+      padding: rem(20) 0 rem(20) 0;
    }
 
    // .page__place
-
+   &__cong{
+      width:60vw;
+      margin:0 auto;
+   }
    &__place {
-      padding: 0 0 rem(60) 0;
+      width:60vw;
+      margin:0 auto;
+      padding: 0 0 rem(30) 0;
    }
 
    // .page__guests
 
    &__guests {
-      padding: rem(40) 0 rem(40) 0;
+      width:60vw;
+      margin:0 auto;
+      padding: rem(20) 0 rem(20) 0;
    }
 
    // .page__DC
@@ -134,7 +141,7 @@ body{
    margin-top:rem(-48);
    color: black;
    text-align: center;
-   height: rem(550);
+   //height: rem(550);
    background-image: url("../img/decor/break.png");
    width: 100%;
    font-size: calc(20px + 20 * (100vw / 1440));
@@ -154,6 +161,7 @@ body{
    // .last-message__first-title
 
    &__first-title {
+      width:60vw;
       position:relative;
       z-index: 1;
       margin: calc(40px + 20 * (100vw / 1440)) auto;
@@ -162,6 +170,8 @@ body{
    // .last-message__second-title
 
    &__second-title {
+      width:60vw;
+      margin: 0 auto;
       position:relative;
       z-index: 1;
    }
@@ -319,7 +329,7 @@ body{
 .survey {
    font-family: "Marck Script", cursive;
    background-color: rgb(255, 218, 185);
-   margin-top:rem(60);
+   //margin-top:rem(20);
    color:black;
    text-align: center;
    font-size: calc(20px + 20 * (100vw / 1440));
@@ -466,11 +476,11 @@ input:focus {outline: none;}
    margin: rem(20) auto;
    padding-bottom: rem(80);
    font-size: calc(14px + 18 * (100vw / 1440));
-   color: black;
+   color: rgb(255, 255, 255);
    //box-shadow: 2px 2px 2px black;
 }
 .a{
-   background-color: rgb(207, 179, 154);;
+   background-color: rgb(165, 142, 122);;
 }
 .ft{
    font-family: "Great Vibes", cursive;
