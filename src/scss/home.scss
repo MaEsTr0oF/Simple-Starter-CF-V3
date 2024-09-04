@@ -24,7 +24,15 @@ body{
    &__cong {
       padding: rem(40) 0;
    }
+   &__color img{
+      object-fit: cover;
+      width: 30%;
+      height:30%;
 
+   }
+   &__color{
+      padding:5%;
+   }
    // .page__title
 
    &__title {
@@ -119,6 +127,7 @@ body{
    height:calc(520px + 400 * (100vw / 1280));
 }
 .last-message {
+   //position:relative;
    margin-top:rem(-48);
    color: black;
    text-align: center;
@@ -130,23 +139,28 @@ body{
    letter-spacing: rem(5);
    // .last-message__image
 
-   // &__image img{
-   //    position: absolute;
+   // &__image{
+   //    position:relative;
+   //    z-index: 0;
    //    object-fit: cover;
    //    width:100%;
    //    height: rem(500);
+      
    // }
 
    // .last-message__first-title
 
    &__first-title {
+      position:relative;
+      z-index: 1;
       margin: calc(40px + 20 * (100vw / 1440)) auto;
    }
 
    // .last-message__second-title
 
    &__second-title {
-      
+      position:relative;
+      z-index: 1;
    }
 }
 .last-messsage {
@@ -163,8 +177,8 @@ body{
 
 .jopa{
    position: relative;
-   left:35%;
-   //top:30px;
+   left:calc(10% + 80 * (100vw / 1440));
+   top:calc(35% - 20 * (100vw / 1440));
    width: 50px;
    height:50px;
    font-size: calc( 25px + 15 * ( 100vw / 1440 ));
@@ -179,11 +193,7 @@ body{
    //top: -15px;
    left:34px;
 }
-@media(max-width:1250px){
-   .jopa{
-      top:5%;
-   }
-}
+
 
 .line{
    padding:rem(60) 0;
@@ -212,6 +222,27 @@ body{
       //height:10%;
    }
 }
+
+@media(max-width:1290px){
+   .jopa{
+      top:-6.5%;
+      //left:25%;
+   }
+   .jopa::before{
+      left:40%;
+      width:28%;
+      height: 28%;
+   }
+   .line{
+      &__image img{
+         width: 38%;
+      }
+      &__image::after{
+         width: 100%;
+         left:1%
+      }
+   }
+}
 @media(max-width:1000px){
    .jopa{
       top:25%;
@@ -227,6 +258,7 @@ body{
          width: 35%;
       }
    }
+   
 }
 @media(max-width:600px){
    .jopa{
@@ -247,7 +279,29 @@ body{
          left:1%
       }
    }
-   
+}
+@media(max-width:450px){
+   .jopa{
+      top:15%;
+      //left:25%;
+   }
+   .jopa::before{
+      left:35%;
+      width:20%;
+      height: 20%;
+   }
+   .line{
+      &__image img{
+         width: 65%;
+      }
+      &__image{
+         width: 80vw;
+      }
+      &__image::after{
+         width: 130%;
+         left: -8%;
+      }
+   }
 }
 // .picture{
 //    position:relative;
