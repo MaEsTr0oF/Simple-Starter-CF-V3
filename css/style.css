@@ -587,6 +587,10 @@ input:focus {
   font-style: normal;
 }
 
+.pr {
+  color: #ffdab9;
+}
+
 @media (max-width: 1290px) {
   .jopa {
     top: -6.5%;
