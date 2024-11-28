@@ -1,7 +1,15 @@
 FROM node:20
+
+# Устанавливаем рабочую директорию
 WORKDIR /src
+
 COPY package*.json ./
-RUN npm install
+
+# Устанавливаем зависимости
+RUN npm install --legacy-peer-deps
+
 COPY . ./
+
 RUN npm run build
+
 CMD ["sh", "-c", "echo 'Build completed. Copy files from ./dist'"]
