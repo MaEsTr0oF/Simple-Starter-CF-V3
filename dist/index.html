@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Love Story</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20241128070728">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js?_v=20241128070728">
+	</script>
+	<script type="text/javascript">
+		(function() {
+			emailjs.init({
+				publicKey: "34WFOYOky5a1f6YGC",
+			});
+		})();
+	</script>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="main_image">
+					<img src="img/decor/First.svg" alt="">
+				</div>
+				<div class="header__title title">
+					<div class="title_first">Любомир</div>
+					<div class="title_second">&</div>
+					<div class="title_three">Наталья</div>
+				</div>
+			</div>
+		</header>
+		<main id="page" class="page">
+			<div class="page__container">
+				<div class="page__date off"><span class="data__number">28</span> сентября <span class="data__year">2024</span> года <br>состоится наша свадьба</div>
+				<div class="page__congratulation off">Приглашаем вас на торжество,<br> посвящённое нашему бракосочетанию.<br> Мы будем рады, если вы проведёте<br> этот счастливый день с нами</div>
+				<h1 class="ft">Расписание</h1>
+				<div class="page__line line">
+					<div class="line__image">
+						<div class="img"><img src="img/decor/rings.svg" class="picture" alt=""></div>
+						<div class="img"><img src="img/decor/camera.svg" class="picture" alt=""></div>
+						<div class="img"> <img src="img/decor/food.svg" class="picture" alt=""></div>
+						<div class="jopa">11:00</div>
+						<div class="jopa">12:00</div>
+						<div class="jopa">13:00</div>
+					</div>
+				</div>
+				<div class="page__DC off ft">Дресс-код</div>
+				<div class="page__clother off">Мы очень старались сделать праздник красивым и будем рады, если в своих нарядах вы поддержите гамму нашей свадьбы</div>
+				<div class="page__color">
+					<img src="img/decor/color1.svg" alt="">
+					<img src="img/decor/color2.svg" alt="">
+					<img src="img/decor/color3.svg" alt="">
+				</div>
+
+				<div class="page__place off">Торжественная церемония состоится в Шипиловском Дворце бракосочетания в 11:00
+					по адресу г. Москва, ул. Шипиловский пр-д, 27
+				</div>
+				<div class="page__cong off">После торжественной части приглашаем всех желающих присоединиться к яркой фотосессии в парке "Царицыно"</div>
+				<div class="page__guests off">Праздничный банкет организован в кафе "Гараж" с 13:00 по адресу г. Москва, ул. Ташкентская, 28с1 </div>
+
+
+			</div>
+		</main>
+		<div class="slider" id="slider">
+			<div class="slide fade">
+
+				<img src="img/decor/Slide1.svg" class="image" alt="">
+
+			</div>
+			<div class="slide fade">
+
+				<img src="img/decor/Slide2.svg" class="image" alt="">
+
+			</div>
+			<div class="slide fade">
+
+				<img src="img/decor/Slide3.svg" class="image" alt="">
+
+			</div>
+			<div class="slide fade">
+
+				<img src="img/decor/Slide4.svg" class="image" alt="">
+
+			</div>
+
+		</div>
+		<br>
+		<div style="text-align: center;">
+			<span class="dot active" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+			<span class="dot" onclick="currentSlide(4)"></span>
+		</div>
+		<div class="last-message">
+			<div class="last-messsage__content">
+				<!-- <img src="img/decor/break.svg" class="last-message__image" alt=""> -->
+				<div class="last-message__first-title">Нам будет очень приятно, если вместо цветов вы принесёте бутылочку хорошего спиртного на свой вкус!</div>
+				<div class="last-message__second-title">Просим подствердить ваше присутствие до <span>22.09.2024</span> , указав своё решение в форме ниже</div>
+			</div>
+		</div>
+		<form class="survey" id="contactForm">
+			<div class="survey__title">
+				<label for="formNameSurename" class="survey__title_nameSurename">
+
+				</label>
+				<input id="formNameSurename" type="text" placeholder="Имя и Фамилия" class="survey__title_input" name="surename" required>
+			</div>
+			<div class="survey__choose ft pr">Ваше присутствие:</div>
+			<div class="survey__options">
+				<div class="options__item">
+					<input type="radio" checked id="formFirstAnswer" value="Придёт" name="choosen" class="options__input" required>
+					<label for="formFirstAnswer" class="options__label"><span>Точно приду</span></label>
+				</div>
+				<div class="options__item">
+					<input type="radio" id="formSecondAnswer" value="Не знает" name="choosen" class="options__input">
+					<label for="formSecondAnswer" class="options__label"><span>Не уверен, что приду</span></label>
+				</div>
+				<div class="options__item">
+					<input type="radio" id="formThirdAnswer" value="НЕ придёт" name="choosen" class="options__input">
+					<label for="formThirdAnswer" class="options__label"><span>Не получится прийти</span></label>
+				</div>
+			</div>
+			<button class="form__button" id="button" type="submit ">Отправить</button>
+		</form>
+		<div class="a">
+			<h3 class="Ekaterina">Узнать подробности развлекательной программы, а также внести в неё свои коррективы можно, связавшись с ведущей нашего торжества Екатериной, по номеру <br>+7 (926) 812-20-44</h3>
+		</div>
+
+		<script>
+			document.getElementById('contactForm').addEventListener('submit', function(event) {
+				event.preventDefault(); // Не обновляйте страницу, пока сообщение не отправлено
+
+				const selectedOption = document.querySelector('input[name="choosen"]:checked');
+
+				// Проверка на случай, если выбранная опция не найдена
+				if (!selectedOption) {
+					alert('Пожалуйста, выберите вариант.');
+					return;
+				}
+
+				var params = {
+					name: document.getElementById('formNameSurename').value,
+					message: selectedOption.value,
+				};
+
+				emailjs.send('service_h80k3rl', 'template_1dquc9d', params)
+					.then(function() {
+						// Проверка значения selectedOption.value
+						if (selectedOption.value == "Придёт") {
+							alert('Ура! Мы счастливы разделить этот знаменательный день с вами!');
+						} else if (selectedOption.value == "Не знает") {
+							alert('Мы очень надеемся, что всё получится. Держи нас в курсе!');
+						} else if (selectedOption.value == "НЕ придёт") {
+							alert('Жаль, но будем верить, что в последний момент планы изменятся, держи нас в курсе!');
+						}
+						document.getElementById('contactForm').reset(); // Очистка формы после отправки
+					}, function(error) {
+						alert('Ошибка отправки: ' + JSON.stringify(error));
+					});
+			});
+		</script>
+
+
+
+		<footer class="footer">
+
+		</footer>
+	</div>
+	<!-- <div id="popup" aria-hidden="true" class="popup">
+   
+</div> -->
+	<script src="js/app.min.js?_v=20241128070728"></script>
+</body>
+
+</html>
